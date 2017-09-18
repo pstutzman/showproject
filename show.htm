@@ -1,0 +1,41 @@
+<html>
+ <script src="/jquery.js"></script>
+ <style type="text/css">
+ .expand {color: green; font-family: monospace; padding-right: 10px; cursor:pointer}
+ .descrip {border: 1px solid #BBF; width: 50%; margin: 5px 2%; padding: 3px 1%;}
+ ul {list-style-type: none; }
+ </style>
+
+ Links to projects:
+ <ul>
+ <li><span class="expand"></span><a href="#">Project 1</a>
+ <div id='div1' class="descrip">This is a brief description of project 1 ... </div>
+ </li>
+ <li><span class="expand"></span><a href="#">Project 2</a>
+ <div id='div2' class="descrip">This is a brief description of project 2 ... </div>
+ </li>
+ <li><span class="expand"></span><a href="#">Project 3</a>
+ <div id='div3' class="descrip">This is a brief description of project 3... </div>
+ </li>
+
+ </ul>
+
+ <script>
+ $('div.descrip').hide();
+ $('span.expand').html('+');
+
+$('span.expand').click( function() {
+ if ($(this).html() == '+') {
+ $(this).html('-');
+ $(this).next().next().show();
+ }
+
+ else {
+ $(this).next().next().hide();
+ $(this).html('+')
+ }
+
+ });
+
+ </script>
+ </html>
